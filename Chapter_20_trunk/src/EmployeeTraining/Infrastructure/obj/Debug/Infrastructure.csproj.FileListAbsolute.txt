@@ -1,5 +1,0 @@
-C:\Projects\EmployeeTrainingProject\trunk\src\EmployeeTraining\Web\bin\Infrastructure.dll
-C:\Projects\EmployeeTrainingProject\trunk\src\EmployeeTraining\Web\bin\Infrastructure.pdb
-C:\Projects\EmployeeTrainingProject\trunk\src\EmployeeTraining\Infrastructure\obj\Debug\ResolveAssemblyReference.cache
-C:\Projects\EmployeeTrainingProject\trunk\src\EmployeeTraining\Infrastructure\obj\Debug\Infrastructure.dll
-C:\Projects\EmployeeTrainingProject\trunk\src\EmployeeTraining\Infrastructure\obj\Debug\Infrastructure.pdb

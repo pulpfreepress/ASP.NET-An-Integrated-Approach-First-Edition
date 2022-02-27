@@ -1,7 +1,0 @@
-C:\Projects\EmployeeTrainingProject\trunk\src\EmployeeTraining\DataAccess\bin\Debug\DataAccess.dll
-C:\Projects\EmployeeTrainingProject\trunk\src\EmployeeTraining\DataAccess\bin\Debug\DataAccess.pdb
-C:\Projects\EmployeeTrainingProject\trunk\src\EmployeeTraining\DataAccess\obj\Debug\ResolveAssemblyReference.cache
-C:\Projects\EmployeeTrainingProject\trunk\src\EmployeeTraining\DataAccess\obj\Debug\DataAccess.dll
-C:\Projects\EmployeeTrainingProject\trunk\src\EmployeeTraining\DataAccess\obj\Debug\DataAccess.pdb
-C:\Projects\EmployeeTrainingProject\trunk\src\EmployeeTraining\Web\bin\DataAccess.dll
-C:\Projects\EmployeeTrainingProject\trunk\src\EmployeeTraining\Web\bin\DataAccess.pdb
