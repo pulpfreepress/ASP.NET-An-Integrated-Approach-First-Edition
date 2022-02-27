@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="#" title="hidden" description="Employee Training Application">
+    <siteMapNode url="" title="Employees"  description="" roles="User, Administrator">
+      <siteMapNode url="~/Pages/Employee/ListEmployees.aspx" title="List"  
+                   description="List Employees" />
+      <siteMapNode url="~/Pages/Employee/CreateEmployee.aspx" title="Create"  
+                   description="Create New Employee"  />
+      <siteMapNode url="~/Pages/Employee/EditEmployee.aspx" title="Edit" 
+                   description="Edit Existing Employee" />
+    </siteMapNode>
+    <siteMapNode url="" title="Admin" description="" roles="Administrator">
+      <siteMapNode url="~/Pages/Admin/Test.aspx" title="Test Page" 
+                   description="Page with various types of controls" />
+      <siteMapNode url="~/Pages/Admin/CourseMaintenance.aspx" title ="Course Maintenance"
+                   description="Add and Edit Courses" />
+    
+      <siteMapNode url="~/Admin/EmailTypeMaintenance" title ="Email Type Maintenance"
+                  description="Add and Edit Email Types" />
+    </siteMapNode>
+    <siteMapNode url="" title="Help" description="" roles="User, Administrator">
+      <siteMapNode url="~/Help/About" title="About..." 
+                   description="A brief description of the application" />
+    </siteMapNode>
+    
+  </siteMapNode>
+</siteMap>

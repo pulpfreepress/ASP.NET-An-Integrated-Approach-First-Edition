@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="C:\Projects\EmployeeTrainingProject\trunk\src\EmployeeTraining\Tests\bin\Debug\Tests.dll" total="10" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2012-12-26" time="14:12:21">
+  <environment nunit-version="2.6.0.12035" clr-version="2.0.50727.5466" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\Projects\EmployeeTrainingProject\trunk\src\EmployeeTraining\Tests\bin\Debug" machine-name="AQUARIUS" user="Administrator" user-domain="AQUARIUS" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite type="Assembly" name="C:\Projects\EmployeeTrainingProject\trunk\src\EmployeeTraining\Tests\bin\Debug\Tests.dll" executed="True" result="Success" success="True" time="6.502" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="Tests" executed="True" result="Success" success="True" time="6.476" asserts="0">
+        <results>
+          <test-suite type="Namespace" name="DataAccess" executed="True" result="Success" success="True" time="6.475" asserts="0">
+            <results>
+              <test-suite type="Namespace" name="DAO" executed="True" result="Success" success="True" time="6.474" asserts="0">
+                <results>
+                  <test-suite type="TestFixture" name="CourseDAOTest" executed="True" result="Success" success="True" time="5.527" asserts="0">
+                    <results>
+                      <test-case name="Tests.DataAccess.DAO.CourseDAOTest.InsertAndDeleteCourseTest" executed="True" result="Success" success="True" time="5.453" asserts="4" />
+                      <test-case name="Tests.DataAccess.DAO.CourseDAOTest.SelectAllCoursesTest" executed="True" result="Success" success="True" time="0.007" asserts="1" />
+                      <test-case name="Tests.DataAccess.DAO.CourseDAOTest.UpdateCourseTest" executed="True" result="Success" success="True" time="0.021" asserts="12" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="EmployeeDAOTest" executed="True" result="Success" success="True" time="0.812" asserts="0">
+                    <results>
+                      <test-case name="Tests.DataAccess.DAO.EmployeeDAOTest.DeleteEmployeeTest" executed="True" result="Success" success="True" time="0.442" asserts="0" />
+                      <test-case name="Tests.DataAccess.DAO.EmployeeDAOTest.SelectAllEmployeesTest" executed="True" result="Success" success="True" time="0.154" asserts="8" />
+                      <test-case name="Tests.DataAccess.DAO.EmployeeDAOTest.SelectEmployeeByIDTest" executed="True" result="Success" success="True" time="0.041" asserts="7" />
+                      <test-case name="Tests.DataAccess.DAO.EmployeeDAOTest.SetEmployeeIsActiveStateTest" executed="True" result="Success" success="True" time="0.056" asserts="3" />
+                      <test-case name="Tests.DataAccess.DAO.EmployeeDAOTest.UpdateEmployeeTest" executed="True" result="Success" success="True" time="0.108" asserts="2" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="TrainingDAOTest" executed="True" result="Success" success="True" time="0.123" asserts="0">
+                    <results>
+                      <test-case name="Tests.DataAccess.DAO.TrainingDAOTest.EmployeeCourseXREFCascadeDeleteTest" executed="True" result="Success" success="True" time="0.078" asserts="3" />
+                      <test-case name="Tests.DataAccess.DAO.TrainingDAOTest.InsertAndDeleteTrainingTest" executed="True" result="Success" success="True" time="0.042" asserts="4" />
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

@@ -1,0 +1,17 @@
+﻿Employee Training Application Change Log
+---------------------------------------------------------------------
+Date		Version		Notes
+---------------------------------------------------------------------
+10Sep2013	 1.0		Initial deployment
+21SEp2013	 2.0		Added regular expression validators to phone and email in EditEmployeeControl.
+05Oct2013	 2.0		Reworked DAO objects to enable the use of a TransactionScope.
+19Oct2013	 2.0		Implemented custom validators for birthday and hire date in EditEmployeeControl.
+07Dec2013	 2.0		Added DataSets folder to Web project. Added Courses DataSet. Added CourseMaintenance page.
+18Jan2014	 3.0		Implemented Forms Authentication
+25Jan2014	 3.0		Updated the release 3 insert test data script to insert valid login has values for all test employees. Improved insert test data script for release 3. Modified EditEmployeeControl to add username, password, and user roles drop down.
+
+
+
+
+
+

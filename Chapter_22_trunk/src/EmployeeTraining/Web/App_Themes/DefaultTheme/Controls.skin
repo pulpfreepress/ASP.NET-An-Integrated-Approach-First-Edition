@@ -1,0 +1,61 @@
+﻿<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+
+
+<asp:GridView runat="server" HorizontalAlign="center" />
+
+<asp:TextBox runat="server" HorizontalAlign="center" />
+
+ <asp:TextBox runat="server" SkinID="DataEntryTextBox" />  <%-- Removed Width property --%>
+
+<asp:Menu runat="server" class="staticMenu" Orientation="Horizontal"  DynamicHorizontalOffset="10">
+          <StaticMenuItemStyle HorizontalPadding="10" VerticalPadding="5" />
+          <StaticHoverStyle BackColor="#284E98" ForeColor="White" />
+          <StaticSelectedStyle BackColor="#507CD1" />
+          <DynamicMenuStyle BackColor="#B5C7DE" />
+          <DynamicMenuItemStyle HorizontalPadding="10" VerticalPadding="5" BorderStyle="Solid" BorderWidth="1" />
+          <DynamicHoverStyle BackColor="#284E98" ForeColor="White"  />
+          <DynamicSelectedStyle BackColor="#507CD1" />    
+</asp:Menu>
+
+<asp:ImageButton class="imageButton" runat="server" BorderColor="White" BorderStyle="Outset" />
+
+<asp:Calendar runat="server" SelectedDayStyle-BackColor="Black" SelectedDayStyle-ForeColor="White"  />
+
+<asp:GridView SkinID="ListEmployeesGridViewSkin" runat="server" HorizontalAlign="Center" 
+              EmptyDataText="No Employee Data Available!" 
+              CellPadding="2"> 
+  
+
+  <HeaderStyle BackColor="LightGray"
+               ForeColor="Blue" />
+
+  <AlternatingRowStyle BackColor="CornSilk"
+                       ForeColor="DarkBlue"
+                       Font-Italic="true" />
+
+  <PagerStyle BackColor="LightGray"
+              ForeColor="Blue"
+              Height="40px"
+              HorizontalAlign="Center"
+              VerticalAlign="Bottom" />
+
+</asp:GridView>
+
+
+
+
+

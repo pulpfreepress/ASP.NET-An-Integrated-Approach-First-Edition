@@ -1,0 +1,7 @@
+C:\Projects\EmployeeTrainingProject\trunk\src\EmployeeTraining\BusinessLogic\bin\Debug\BusinessLogic.dll
+C:\Projects\EmployeeTrainingProject\trunk\src\EmployeeTraining\BusinessLogic\bin\Debug\BusinessLogic.pdb
+C:\Projects\EmployeeTrainingProject\trunk\src\EmployeeTraining\Web\bin\BusinessLogic.dll
+C:\Projects\EmployeeTrainingProject\trunk\src\EmployeeTraining\Web\bin\BusinessLogic.pdb
+C:\Projects\EmployeeTrainingProject\trunk\src\EmployeeTraining\BusinessLogic\obj\Debug\BusinessLogic.dll
+C:\Projects\EmployeeTrainingProject\trunk\src\EmployeeTraining\BusinessLogic\obj\Debug\BusinessLogic.pdb
+C:\Projects\EmployeeTrainingProject\trunk\src\EmployeeTraining\BusinessLogic\obj\Debug\BusinessLogic.csprojResolveAssemblyReference.cache

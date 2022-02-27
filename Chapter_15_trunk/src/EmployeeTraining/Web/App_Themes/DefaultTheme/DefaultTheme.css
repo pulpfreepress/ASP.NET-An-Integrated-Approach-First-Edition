@@ -1,0 +1,112 @@
+﻿body
+{
+    /* Default body color: light sand */
+    background-color: #EFEADA;
+    font-family: Sans-Serif;
+    font-size: 12px;
+}
+
+.centeredTable
+{
+    width: 100%;
+    text-align: center;
+    min-width:800px;
+    padding-top:40px;
+}
+
+.masterTable
+{
+    width: 100%;
+    text-align:center;
+}
+
+
+.upperNavAreaDiv
+{
+    background-color: #BBD4C4;
+    border: 1px solid black;
+    width: 100%;
+    height:60px;
+    padding-top:10px;
+}
+
+
+.menuDiv
+{
+    background-color: #D2C493;
+    width: 100%;
+    border:1px solid Black;
+    
+}
+
+.staticMenu 
+{
+  cursor:pointer;
+  font-family:Sans-Serif;
+  color:Black;
+  background-color:#D2C493;
+  font-size:12;
+  font-weight:bold;
+ /* border:1px solid black; */
+     
+}
+
+
+.masterContentDiv
+{
+    width: 100%;
+}
+
+.centerControls
+{
+    text-align: center;
+}
+
+.footerContentDiv
+{
+    background-color: #DFD4AE;
+    width: 100%;
+}
+
+.navIcons 
+{
+   padding-left:40%;
+   
+   
+}
+
+.imageButton 
+{
+    margin-right:40px;
+}
+
+.dataEntryLabel 
+{
+  text-align:right;
+  color:Blue;  
+  padding-right:15px;
+  font-weight:bold; 
+}
+
+.dataEntryControl 
+{
+  text-align:left;
+     
+}
+
+.sectionDivider
+{
+  height:20px;
+  background-color:#BBD4C4;
+  padding-top:5px;
+     
+}
+
+.sectionHeadingText
+{
+    text-align:center;
+    font-family:Sans-Serif;
+    font-size:15px;
+    font-weight:bold;
+}
+

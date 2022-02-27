@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="false">
+  <TopNode>[0-1021]C:\Projects\EmployeeTrainingProject\trunk\src\EmployeeTraining\Tests\bin\Debug\Tests.dll</TopNode>
+  <SelectedNode>[0-1021]C:\Projects\EmployeeTrainingProject\trunk\src\EmployeeTraining\Tests\bin\Debug\Tests.dll</SelectedNode>
+  <ExcludeCategories>false</ExcludeCategories>
+  <Nodes>
+    <Node UniqueName="[0-1021]C:\Projects\EmployeeTrainingProject\trunk\src\EmployeeTraining\Tests\bin\Debug\Tests.dll" Expanded="true" />
+    <Node UniqueName="[0-1022]Tests" Expanded="true" />
+    <Node UniqueName="[0-1025]Tests.BusinessLogic" Expanded="true" />
+    <Node UniqueName="[0-1026]Tests.BusinessLogic.BO" Expanded="true" />
+    <Node UniqueName="[0-1027]Tests.BusinessLogic.Components" Expanded="true" />
+    <Node UniqueName="[0-1023]Tests.DataAccess" Expanded="true" />
+    <Node UniqueName="[0-1024]Tests.DataAccess.DAO" Expanded="true" />
+  </Nodes>
+</VisualState>

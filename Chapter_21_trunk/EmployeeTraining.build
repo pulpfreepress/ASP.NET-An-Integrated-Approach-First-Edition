@@ -1,0 +1,298 @@
+<?xml version="1.0"?>
+<project name="EmployeeTraining" default="build-all" basedir=".">
+    
+    <!-- =================================================================== -->
+    <!-- Properties                                                          -->
+    <!-- =================================================================== -->
+    <property name="debug" value="true"/>
+
+	<property name="current.dir" value="${directory::get-current-directory()}"/>
+	<property name="parent.dir" value="${directory::get-parent-directory(current.dir)}"/>
+	<property name="trunk.dir" value="${directory::get-current-directory()}" />
+    
+	<property name="db.scripts.dir" value="${trunk.dir}/database"/>
+	<property name="tests.dir" value="${trunk.dir}/src/EmployeeTraining/Tests"/>
+	<property name="tests.bin" value="${tests.dir}/bin"/>
+	<property name="documentation.dir" value="${trunk.dir}/documentation" />
+
+	<property name="src.dir" value="${trunk.dir}/src/EmployeeTraining"/>
+	<property name="web.dir" value="${src.dir}/Web"/>
+	
+    
+	<property name="deploy.dir" value="${trunk.dir}/Deploy"/>
+	<property name="build.dir" value="${trunk.dir}/Build"/>
+    <property name="build.test" value="${build.dir}/Test"/>
+    <property name="build.log" value="${build.dir}/Log"/>
+
+	<property name="output.dir" value="${src.dir}/Web/bin"/>
+	<property name="log.output.dir" value="${trunk.dir}/BuildLogs"/>
+	
+    <property name="references.dir" value="${src.dir}/Web/bin"/>
+   
+	<tstamp property="build.time" pattern="yyyyMMdd-HHmm" verbose="true" />
+	
+	<property name="framework-get-assembly-directory" value="${framework::get-assembly-directory('net-4.0')}" />
+    <property name="dotNetReferenceAssemblyPath" value="${framework-get-assembly-directory}\" />
+	<property name="mvcDLLPath" value="C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 2\Assemblies\" />
+	
+	
+	
+	
+	<!-- =================================================================== -->
+    <!-- Clean targets                                                       -->
+    <!-- =================================================================== -->
+    <target name="clean-infrastructure" 
+	        description="removes the Infrastructure.dll, .pdb, and xml files">
+		<delete file="${output.dir}/Infrastructure.dll" />
+		<delete file="${output.dir}/Infrastructure.pdb" />
+		<delete file="${output.dir}/Infrastructure.xml" />
+	</target>
+	
+	<target name="clean-dataaccess" 
+	        description="removes the DataAccess.dll, .pdb, and .xml files">
+		<delete file="${output.dir}/DataAccess.dll" />
+		<delete file="${output.dir}/DataAccess.pdb" />
+		<delete file="${output.dir}/DataAccess.xml" />
+	</target>
+	
+	<target name="clean-businesslogic"
+	        description="removes the BusinessLogic.dll, .pdb, and .xml files">
+		<delete file="${output.dir}/BusinessLogic.dll" />
+		<delete file="${output.dir}/BusinessLogic.pdb" />
+		<delete file="${output.dir}/BusinessLogic.xml" />
+	</target>
+	
+	<target name="clean-code" 
+	        description="remove all generated dlls previously built" 
+            depends="clean-infrastructure, clean-dataaccess, clean-businesslogic">
+	</target>
+	
+	<target name="clean-all" 
+	        description="removes build, deploy, and assemblies">
+        <call target="clean-code"/>
+		<delete dir="${build.dir}/Log" />
+        <delete dir="${build.dir}"/>
+		<delete dir="${deploy.dir}/Web"/>
+		<delete dir="${deploy.dir}/Scripts"/>
+        <delete dir="${deploy.dir}"/>
+    </target>
+	
+	
+	<!-- =================================================================== -->
+    <!-- Database Targets                                                    -->
+    <!-- =================================================================== -->
+	
+	<target name="create-dev-database-2.0"
+	        description="drops and recreates version 2.0 of the development database" >
+		<exec program="CreateRelease_2.0_Database.bat" basedir="${db.scripts.dir}" workingdir="${db.scripts.dir}">
+		</exec>
+	</target>
+	
+	
+	<target name="create-latest-dev-database"
+	        description="calls the latest create development database target" 
+			depends="create-dev-database-2.0" >     
+	</target>
+	
+	
+	<!-- =================================================================== -->
+    <!-- EmployeeTraining Assemblies                                         -->
+    <!-- =================================================================== -->
+	<assemblyfileset id="EmployeeTraining.assemblies">
+		
+		<include name="${references.dir}/Microsoft.Practices.EnterpriseLibrary.Common.dll" />
+	    <include name="${references.dir}/Microsoft.Practices.EnterpriseLibrary.Data.dll" />
+	    <include name="${references.dir}/Microsoft.Practices.ServiceLocation.dll" />
+		<include name="${references.dir}/Microsoft.Practices.Unity.dll" />
+		<include name="${references.dir}/Microsoft.Practices.Unity.Configuration.dll" />
+		<include name="${references.dir}/Microsoft.Practices.Unity.Interception.dll" />
+	    <include name="${references.dir}/log4net.dll" />
+		<include name="${references.dir}/Infrastructure.dll" />
+		<include name="${references.dir}/DataAccess.dll" />
+		<include name="${references.dir}/BusinessLogic.dll" />
+		<include name="${tests.bin}/Debug/nunit.framework.dll" />
+		<include name="${dotNetReferenceAssemblyPath}System.ComponentModel.DataAnnotations.dll" />
+		<include name="${dotNetReferenceAssemblyPath}System.Web.Routing.dll" />
+		<include name="${dotNetReferenceAssemblyPath}System.Web.Abstractions.dll" />
+		<include name="${mvcDLLPath}System.Web.Mvc.dll" />
+		
+	</assemblyfileset>
+	
+
+	<!-- =================================================================== -->
+    <!-- Build targets                                                       -->
+    <!-- =================================================================== -->
+	
+    <target name="build-infrastructure" 
+	        description="compiles the source code for the infrastructure dll." 
+			depends="clean-all">
+		<csc target="library" 
+		     output="${output.dir}/Infrastructure.dll" 
+			 debug="${debug}" 
+			 doc="${output.dir}/Infrastructure.xml">
+			<sources>
+                <include name="${src.dir}/Infrastructure/**/*.cs" />
+            </sources>
+            <references refid="EmployeeTraining.assemblies" />
+        </csc>
+    </target>
+	
+	<target name="build-dataaccess" 
+	        description="compiles the source code for the dataaccess dll." 
+			depends="build-infrastructure">
+		<csc target="library" 
+		     output="${output.dir}/DataAccess.dll" 
+			 debug="${debug}" 
+			 doc="${output.dir}/DataAccess.xml">
+			<sources>
+                <include name="${src.dir}/DataAccess/**/*.cs" />
+            </sources>
+            <references refid="EmployeeTraining.assemblies" />
+        </csc>
+    </target>
+	
+	<target name="build-businesslogic" 
+	        description="compiles the source code for the businesslogic dll." 
+			depends="build-dataaccess">
+		<csc target="library" 
+		     output="${output.dir}/BusinessLogic.dll" 
+			 debug="${debug}" 
+			 doc="${output.dir}/BusinessLogic.xml">
+			<sources>
+                <include name="${src.dir}/BusinessLogic/**/*.cs" />
+            </sources>
+            <references refid="EmployeeTraining.assemblies" />
+        </csc>
+    </target>
+	
+	<target name="build-web" 
+	        description="compiles the source code for the web dll." 
+			depends="build-businesslogic">
+		<csc target="library" 
+		     output="${output.dir}/Web.dll" 
+			 debug="${debug}" 
+			 doc="${output.dir}/Web.xml">
+			<sources>
+                <include name="${src.dir}/Web/**/*.cs" />
+            </sources>
+            <references refid="EmployeeTraining.assemblies" />
+        </csc>
+    </target>
+	
+	<target name="build-tests" 
+	        description="compiles the source code for the tests dll." 
+			depends="build-web">
+		<csc target="library" 
+		     output="${tests.bin}/Debug/Tests.dll" 
+			 
+			 doc="${tests.bin}/Debug/Tests.xml">
+			<sources>
+                <include name="${src.dir}/Tests/**/*.cs" />
+            </sources>
+            <references refid="EmployeeTraining.assemblies" />
+        </csc>
+    </target>
+	
+	
+	<target name="build-documentation"
+	        description="Builds system documentation from assembly document xml files"
+			depends="run-tests">
+			
+			<ndoc verbose="true">
+				<assemblies basedir="${references.dir}" >
+					<include name="Infrastructure.dll"/>
+					<include name="DataAccess.dll" />
+					<include name="BusinessLogic.dll" />
+					
+					<include name="${tests.bin}/Debug/Tests.dll" />
+				</assemblies>
+				<summaries basedir="${references.dir}" >
+				  <include name="NamespaceSummaries.xml" />
+				</summaries>
+				
+				<documenters>
+					<documenter name="MSDN">
+						<property name="OutputDirectory" value="${documentation.dir}/WebDocs" />
+						<property name="HtmlHelpName" value="Employee Training Application API" />
+						<property name="IncludeFavorites" value="False" />
+						<property name="Title" value="Employee Training API Documentation" />
+						<property name="SplitTOCs" value="False" />
+						<property name="DefaulTOC" value="" />
+						<property name="ShowVisualBasic" value="False" />
+						<property name="ShowMissingSummaries" value="True" />
+						<property name="ShowMissingRemarks" value="True" />
+						<property name="ShowMissingParams" value="True" />
+						<property name="ShowMissingReturns" value="True" />
+						<property name="ShowMissingValues" value="True" />
+						<property name="DocumentInternals" value="False" />
+						<property name="DocumentProtected" value="True" />
+						<property name="DocumentPrivates" value="True" />
+						<property name="DocumentEmptyNamespaces" value="False" />
+						<property name="IncludeAssemblyVersion" value="False" />
+						<property name="CopyrightText" 
+						          value="Copyright @2014 Rick Miller -- All Rights Reserved " />
+						<property name="CopyrightHref" value="" />
+					 </documenter>
+				</documenters> 
+			</ndoc>
+			
+	</target>
+	
+	
+    <!-- =================================================================== -->
+    <!-- Run Tests                                                           -->
+    <!-- =================================================================== -->
+	<target name="run-tests" 
+	        description="runs all the Nunit tests in the Tests.Dll" 
+			depends="build-tests" >
+		<nunit2 verbose="true" labels="true">
+		    <formatter type="Plain" />
+			<formatter type="Xml" usefile="true" extension=".xml" 
+                outputdir="${build.log}/nunit" />
+                
+			<test assemblyname="${tests.bin}/Debug/Tests.dll" 
+                appconfig="${tests.bin}/Debug/Tests.dll.config" />
+		</nunit2>
+	</target>
+	
+	
+	<!-- =================================================================== -->
+    <!-- Build All                                                           -->
+    <!-- =================================================================== -->
+	
+	<target name="build-all"
+	        description="Builds the application by calling the build-documentation target"
+	        depends="build-documentation"> 
+	</target>
+	
+	<!-- =================================================================== -->
+    <!-- Deploy Web Application                                              -->
+    <!-- =================================================================== -->
+	
+	<target name="deploy-web-application"
+	        description="copies the Web directory and database scripts to the trunk/Deploy directory" >
+		 <copy todir="${deploy.dir}/Web" overwrite="true">
+            <fileset basedir="${web.dir}">
+                <include name="**/*" />
+            </fileset>
+        </copy>	
+		
+		<copy todir="${deploy.dir}/Scripts" overwrite="true">
+            <fileset basedir="${db.scripts.dir}">
+                <include name="**/*" />
+            </fileset>
+        </copy>	
+			
+	</target>
+	
+	<!-- =================================================================== -->
+    <!-- Build & Deploy                                                          -->
+    <!-- =================================================================== -->
+	
+	<target name="build-and-deploy"
+	        description="Builds, tests, documents, and prepares application for deployment"> 
+		<call target="build-all" />
+		<call target="deploy-web-application" />
+	</target>
+	
+</project>

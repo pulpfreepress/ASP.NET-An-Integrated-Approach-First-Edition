@@ -1,0 +1,86 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" EnableTheming="true" EnableViewState="true"  %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+
+<head id="Head1" runat="server">
+    <title>Employee Training Application</title>
+    <asp:ContentPlaceHolder ID="HeadContentHolder" runat="server">
+   
+    
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+    <form id="Form1" runat="server">
+    <table class="masterTable">
+        <tr>
+            <td>
+              
+                <div class="upperNavAreaDiv">
+                    
+                       <span class="navIcons">
+                    
+                        <asp:ImageButton ID="homeButton" ImageUrl="~/Images/HomeIcon.gif" CausesValidation="false" runat="server"
+                            PostBackUrl="~/MasterViewPage/ListEmployees" ToolTip="Go to List Employees page"   />
+                        <asp:ImageButton ID="listEmployeesButton" ImageUrl="~/Images/ListEmployeesIcon.gif" runat="server"
+                            CausesValidation="false" PostBackUrl="~/MasterViewPage/ListEmployees" ToolTip="Go to List Employees page" />
+                        <asp:ImageButton ID="createEmployeeButton" ImageUrl="~/Images/CreateEmployeeIcon.gif"
+                            CausesValidation="false"  PostBackUrl="~/MasterViewPage/CreateEmployee" runat="server" 
+                            ToolTip="Go to Create Employee page"/>
+                        <asp:ImageButton ID="editEmployeeButton" ImageUrl="~/Images/EditEmployeeIcon.gif"
+                            CausesValidation="false"  runat="server" ToolTip="Go to Edit Employee page"
+                             PostBackUrl="~/MasterViewPage/EditEmployee"/>
+                        <asp:ImageButton ID="helpButton" ImageUrl="~/Images/HelpIcon.gif" CausesValidation="false"
+                             runat="server" ToolTip="Open the online user manual"
+                             PostBackUrl="~/MasterViewPage/HelpPage" />
+                     
+                        </span>
+                    
+                </div>
+                
+            </td>
+        </tr>
+        </table>
+        <table class="masterTable">
+        <tr>
+            <td>
+            
+                <div class="menuDiv">
+                    <asp:Menu ID="MainMenu" runat="server" DataSourceID="basicSiteMap">
+                    </asp:Menu>
+                </div>
+           
+            </td>
+        </tr>
+        </table>
+        </form>
+        <table class="masterTable">
+        <tr>
+            <td>
+                <div class="messageLableDiv">
+                   <asp:Label ID="messageLabel" runat="server" CssClass="infoMessages"  />
+                </div>
+
+                <div class="masterContentDiv">
+                    <asp:ContentPlaceHolder ID="MainContentHolder" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="footerContentDiv">
+                    <asp:ContentPlaceHolder ID="FooterContentHolder" runat="server">
+                        Footer content will go here...
+                    </asp:ContentPlaceHolder>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <asp:SiteMapDataSource ShowStartingNode="false" ID="basicSiteMap" runat="server" />
+  
+</body>
+
+</html>

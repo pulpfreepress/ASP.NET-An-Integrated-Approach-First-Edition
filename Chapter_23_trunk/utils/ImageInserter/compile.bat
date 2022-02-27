@@ -1,0 +1,1 @@
+csc /r:Microsoft.Practices.EnterpriseLibrary.Common.dll;Microsoft.Practices.EnterpriseLibrary.Data.dll;Microsoft.Practices.ServiceLocation.dll;Microsoft.Practices.Unity.dll *.cs
